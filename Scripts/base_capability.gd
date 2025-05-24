@@ -2,9 +2,6 @@ extends Node
 class_name BaseCapability
 
 # Part 1: Activation Functions
-func _ready():
-	v_setup()
-
 func _physics_process(delta: float) -> void:
 	if is_active():
 		if v_should_deactivate():
@@ -37,14 +34,8 @@ func _deactivate():
 
 var entity : Entity
 var _active : bool = false
-var active_duration : float = 0.0
-var deactive_duration : float = 0.0
-
-func find_entity():
-	var current_node = get_parent()
-	while current_node is not Entity:
-		current_node = current_node.get_parent()
-	entity = current_node
+@export var active_duration : float = 0.0
+@export var deactive_duration : float = 0.0
 
 func is_active() -> bool:
 	return _active
@@ -62,7 +53,7 @@ func is_blocked():
 
 # Part 3: Virtual Functions
 func v_setup():
-	find_entity()
+	pass
 
 func v_should_activate() -> bool:
 	return true

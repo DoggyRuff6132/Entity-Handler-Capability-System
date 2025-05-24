@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://4d80u2js3155"]
+[gd_scene load_steps=5 format=3 uid="uid://4d80u2js3155"]
 
 [ext_resource type="PackedScene" uid="uid://dadg3ah6fhasy" path="res://Demo/Entities/player.tscn" id="1_tf6vu"]
 [ext_resource type="PackedScene" uid="uid://cb0basjogmr5n" path="res://Demo/Handlers/movement_handlers/wasd_movement_handler.tscn" id="2_507db"]
+[ext_resource type="PackedScene" uid="uid://sfh3oxte3qjd" path="res://Demo/Handlers/debuff_handler/debuff_handler.tscn" id="3_507db"]
 [ext_resource type="PackedScene" uid="uid://b2m7s0xy65n3q" path="res://Demo/Capabilities/weapon_switch_capability.tscn" id="3_tf6vu"]
 
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_tf6vu")]
-default_handlers = Array[PackedScene]([ExtResource("2_507db"), ExtResource("3_tf6vu")])
+default_handlers = Array[PackedScene]([ExtResource("2_507db"), ExtResource("3_507db")])
+default_capabilities = Array[PackedScene]([ExtResource("3_tf6vu")])
 
 [node name="Camera2D" type="Camera2D" parent="."]

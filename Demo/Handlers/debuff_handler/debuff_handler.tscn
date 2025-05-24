@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://sfh3oxte3qjd"]
+
+[ext_resource type="Script" uid="uid://boeb5b5ceshxu" path="res://Demo/Entities/attack_speed_change_capability.gd" id="1_xtos8"]
+
+[node name="Debuff Handler" type="Node"]
+
+[node name="Attack Speed Change Capability" type="Node" parent="."]
+script = ExtResource("1_xtos8")
+active_duration = 3.0

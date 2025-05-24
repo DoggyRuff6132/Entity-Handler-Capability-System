@@ -2,17 +2,25 @@ extends Node
 class_name Entity
 
 @export var default_handlers : Array[PackedScene]
-var handler_nodes : Array[Node]
+var handler_nodes = []
+@onready var handler_container : Node = $"Handler Container"
+func get_handler_nodes():
+	return handler_nodes
+
+@export var default_capabilities : Array[PackedScene]
+var capability_nodes = []
+@onready var capability_container : Node = $"Capability Container"
 
 var blocked_tags = {}
 
-# holds all the handlers in the scene tree
-@onready var handler_container : Node = $"Handler Container"
 
 
 func _ready() -> void:
 	for handler : PackedScene in default_handlers:
 		_instantiate_handler(handler)
+	
+	for capability : PackedScene in default_capabilities:
+		_instantiate_capability(capability)
 
 
 func block_tag(instigator, tag : String):
@@ -44,3 +52,16 @@ func _instantiate_handler(handler : PackedScene):
 	var instance = handler.instantiate()
 	handler_container.add_child(instance)
 	handler_nodes.append(instance)
+	
+	for capability : BaseCapability in instance.get_children():
+		capability.entity = self
+		capability.v_setup()
+
+func _instantiate_capability(capability : PackedScene):
+	print("Instantiated capability " + capability.resource_path)
+	var instance = capability.instantiate()
+	capability_container.add_child(instance)
+	capability_nodes.append(instance)
+	
+	instance.entity = self
+	instance.v_setup()

@@ -8,7 +8,9 @@ var shoot_handler : BaseShootHandler
 @export var _shot_cooldown = 0.5
 var _on_shot_cooldown = false
 func get_shot_cooldown():
-	return _shot_cooldown * shoot_handler.get_shot_delay_modifier()
+	var cooldown = _shot_cooldown * shoot_handler.get_shot_delay_multiplier()
+	print("Cooldown: " + str(cooldown))
+	return cooldown
 
 
 func v_setup():
