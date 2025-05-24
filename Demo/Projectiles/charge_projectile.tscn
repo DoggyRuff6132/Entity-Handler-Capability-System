@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://1gwv7lq70oo4"]
+
+[ext_resource type="Script" uid="uid://3dwaa0k5h58u" path="res://Demo/Projectiles/projectile.gd" id="1_lpiik"]
+[ext_resource type="Texture2D" uid="uid://lpti8t5x4t52" path="res://icon.svg" id="2_ipej2"]
+
+[node name="ChargeProjectile" type="Node2D"]
+script = ExtResource("1_lpiik")
+_speed = 500.0
+metadata/_custom_type_script = "uid://3dwaa0k5h58u"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 2.35619
+texture = ExtResource("2_ipej2")

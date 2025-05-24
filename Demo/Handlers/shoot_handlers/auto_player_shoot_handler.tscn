@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj1js8a1l5pcp"]
+
+[ext_resource type="Script" uid="uid://bas34lkjnmnd6" path="res://Demo/Handlers/shoot_handlers/auto_player_shoot_handler.gd" id="1_t2fy5"]
+[ext_resource type="Script" uid="uid://bxltc041jvwjr" path="res://Demo/Capabilities/shoot_projectile_capability.gd" id="2_wruqw"]
+[ext_resource type="PackedScene" uid="uid://dhgdyk16yph2w" path="res://Demo/Projectiles/weak_projectile.tscn" id="3_hxwm6"]
+[ext_resource type="PackedScene" uid="uid://dykoq8hlfkxq0" path="res://Demo/Projectiles/strong_projectile.tscn" id="4_hv2f6"]
+
+[node name="AutoPlayerShootHandler" type="Node"]
+script = ExtResource("1_t2fy5")
+
+[node name="ShootProjectileCapability" type="Node" parent="."]
+script = ExtResource("2_wruqw")
+projectile_to_shoot = ExtResource("3_hxwm6")
+_shot_cooldown = 0.15
+
+[node name="ShootProjectileCapability2" type="Node" parent="."]
+script = ExtResource("2_wruqw")
+projectile_to_shoot = ExtResource("4_hv2f6")
+_shot_cooldown = 0.7

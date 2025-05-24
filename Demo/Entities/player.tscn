@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dadg3ah6fhasy"]
+
+[ext_resource type="Script" uid="uid://bqs601o53csaq" path="res://Demo/Entities/player_entity.gd" id="1_k0mbb"]
+[ext_resource type="PackedScene" uid="uid://cb0basjogmr5n" path="res://Demo/Handlers/movement_handlers/wasd_movement_handler.tscn" id="2_2rm4q"]
+[ext_resource type="Texture2D" uid="uid://lpti8t5x4t52" path="res://icon.svg" id="4_a230l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0mbb"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_k0mbb")
+handlers = Array[PackedScene]([ExtResource("2_2rm4q")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k0mbb")
+
+[node name="Handler Container" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_a230l")

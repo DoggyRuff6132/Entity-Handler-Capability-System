@@ -1,0 +1,10 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2m7s0xy65n3q"]
+
+[ext_resource type="Script" uid="uid://8ielwfw6va32" path="res://Demo/Handlers/weapon_switch_handler.gd" id="1_nnulf"]
+[ext_resource type="PackedScene" uid="uid://c6vlgves1try1" path="res://Demo/Handlers/shoot_handlers/semi_player_shoot_handler.tscn" id="2_gjffo"]
+[ext_resource type="PackedScene" uid="uid://cj1js8a1l5pcp" path="res://Demo/Handlers/shoot_handlers/auto_player_shoot_handler.tscn" id="3_elutp"]
+[ext_resource type="PackedScene" uid="uid://cyggkjiyrpthd" path="res://Demo/Handlers/shoot_handlers/charge_player_shoot_handler.tscn" id="4_h06pm"]
+
+[node name="WeaponSwitchCapability" type="Node"]
+script = ExtResource("1_nnulf")
+weapon_handlers = Array[PackedScene]([ExtResource("2_gjffo"), ExtResource("3_elutp"), ExtResource("4_h06pm")])

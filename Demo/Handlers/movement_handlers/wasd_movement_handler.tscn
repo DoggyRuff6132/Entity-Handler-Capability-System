@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb0basjogmr5n"]
+
+[ext_resource type="Script" uid="uid://bpprlabnsxu33" path="res://Demo/Handlers/movement_handlers/wasd_movement_handler.gd" id="1_nkvkr"]
+[ext_resource type="Script" uid="uid://bv6ngh8ueb2sf" path="res://Demo/Capabilities/accelerate_capability.gd" id="2_231rm"]
+[ext_resource type="Script" uid="uid://bxwqakoo58ot8" path="res://Demo/Capabilities/decelerate_capability.gd" id="3_231rm"]
+
+[node name="WASD Movement Handler" type="Node"]
+script = ExtResource("1_nkvkr")
+move_speed = 1000.0
+
+[node name="AccelerateCapability" type="Node" parent="."]
+script = ExtResource("2_231rm")
+
+[node name="DecelerateCapability" type="Node" parent="."]
+script = ExtResource("3_231rm")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhgdyk16yph2w"]
+
+[ext_resource type="Script" uid="uid://3dwaa0k5h58u" path="res://Demo/Projectiles/projectile.gd" id="1_rgepl"]
+[ext_resource type="Texture2D" uid="uid://lpti8t5x4t52" path="res://icon.svg" id="2_irv06"]
+
+[node name="WeakProjectile" type="Node2D"]
+z_index = 25
+script = ExtResource("1_rgepl")
+_speed = 500.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 5.96046e-07)
+scale = Vector2(1, 0.09375)
+texture = ExtResource("2_irv06")

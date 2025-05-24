@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyggkjiyrpthd"]
+
+[ext_resource type="Script" uid="uid://df61embcuigs1" path="res://Demo/Handlers/shoot_handlers/charge_player_shoot_handler.gd" id="1_205bi"]
+[ext_resource type="Script" uid="uid://ddl7gkjyu2cq" path="res://Demo/Capabilities/charge_capability.gd" id="2_at7wn"]
+[ext_resource type="Script" uid="uid://bxltc041jvwjr" path="res://Demo/Capabilities/shoot_projectile_capability.gd" id="3_7ps7b"]
+[ext_resource type="PackedScene" uid="uid://1gwv7lq70oo4" path="res://Demo/Projectiles/charge_projectile.tscn" id="4_7ps7b"]
+
+[node name="ChargePlayerShootHandler" type="Node"]
+script = ExtResource("1_205bi")
+
+[node name="ShootProjectileCapability" type="Node" parent="."]
+script = ExtResource("3_7ps7b")
+projectile_to_shoot = ExtResource("4_7ps7b")
+metadata/_custom_type_script = "uid://bxltc041jvwjr"
+
+[node name="ChargeShootCapabiility" type="Node" parent="."]
+script = ExtResource("2_at7wn")
+metadata/_custom_type_script = "uid://ddl7gkjyu2cq"
